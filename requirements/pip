@@ -2,14 +2,13 @@ Babel==2.5.0
 Flask==0.12.2
 Flask-Babel==0.11.2
 Flask-Login==0.4.0
-Flask-OpenID==1.2.5
+Flask-oidc==1.1.1
 Flask-SQLAlchemy==2.2
 Flask-WhooshAlchemy==0.56
 Flask-WTF==0.14.2
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
-python-openid==2.2.5
 pytz==2017.2
 SQLAlchemy==1.1.13
 sqlalchemy-migrate==0.11.0
