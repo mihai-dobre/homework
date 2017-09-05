@@ -79,4 +79,3 @@ def main():
                            user=user,
                            posts=posts)
 
-
