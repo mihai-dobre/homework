@@ -1,7 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <h1>Hi, {{ user.name }}!</h1>
+    {% if id_token %}
+        <table name="ID_TOKEN">
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            {% for key in id_token %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ id_token[key] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>No id token set!</h2>
+    {% endif %}
+    <br>
+    {% if access_token %}
+        <table name="ACCESS_TOKEN">
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            {% for key in access_token %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ access_token[key] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>No access token available!</h2>
+    {% endif %}
 {% endblock %}

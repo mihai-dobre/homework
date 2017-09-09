@@ -1,15 +1,34 @@
 <html>
   <head>
     {% if title %}
-    <title>{{ title }} - microblog</title>
+    <title>{{ title }} - Homework</title>
     {% else %}
-    <title>Welcome to microblog</title>
+    <title>Welcome to Mihai's homework</title>
     {% endif %}
+    <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
   </head>
   <body>
-    <div>Microblog: <a href="/main">Home</a>
-        {% if g.user.is_authenticated %}
+    <div>Homework: <a href="{{ url_for('index') }}">Home</a>
+        {% if g.oidc.user_loggedin %}
         | <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+        | <a href="{{ url_for('login') }}">Login</a>
         {% endif %}
     </div>
     <hr>
